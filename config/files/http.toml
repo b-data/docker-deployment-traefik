@@ -1,0 +1,7 @@
+[http]
+  [http.middlewares]
+    [http.middlewares.http2https.redirectScheme]
+      scheme = "https"
+    [http.middlewares.sts.headers]
+      forceSTSHeader = true
+      stsSeconds = 315360000
