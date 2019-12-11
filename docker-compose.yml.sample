@@ -45,11 +45,11 @@ services:
 #    labels:
 #      - traefik.enable=true
 #      - traefik.http.routers.whoami.entrypoints=web
-#      - traefik.http.routers.whoami.rule=Host(`<whoami.mydomain.com>`)
+#      - traefik.http.routers.whoami.rule=Host(`whoami.mydomain.com`)
 #      - traefik.http.routers.whoami.middlewares=http2https@file
 #      - traefik.http.routers.whoami-sec.entrypoints=websecure
-#      - traefik.http.routers.whoami-sec.rule=Host(`<whoami.mydomain.com>`)
-#      - traefik.http.routers.whoami-sec.tls.certresolver=<mydomain-com>
+#      - traefik.http.routers.whoami-sec.rule=Host(`whoami.mydomain.com`)
+#      - traefik.http.routers.whoami-sec.tls.certresolver=mydomain-com
 #      - traefik.http.routers.whoami-sec.middlewares=sts@file
 
 networks:
