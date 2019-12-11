@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  traefik:
+    image: traefik:${TRAEFIK_VERSION}
+    container_name: traefik
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      #- "8080:8080"
+    volumes:
+      - ./config/acme:/etc/traefik/acme
+      - ./config/files:/etc/traefik/files:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - TRAEFIK_GLOBAL_CHECKNEWVERSION=false
+      - TRAEFIK_GLOBAL_SENDANONYMOUSUSAGE=false
+      - TRAEFIK_ENTRYPOINTS_web=true
+      - TRAEFIK_ENTRYPOINTS_web_ADDRESS=:80
+      - TRAEFIK_ENTRYPOINTS_websecure=true
+      - TRAEFIK_ENTRYPOINTS_websecure_ADDRESS=:443
+      - TRAEFIK_CERTIFICATESRESOLVERS_${NAME1}=true
+      - TRAEFIK_CERTIFICATESRESOLVERS_${NAME1}_ACME_EMAIL=${ACME_EMAIL1}
+      - TRAEFIK_CERTIFICATESRESOLVERS_${NAME1}_ACME_STORAGE=/etc/traefik/acme/acme_${NAME1}.json
+      - TRAEFIK_CERTIFICATESRESOLVERS_${NAME1}_ACME_HTTPCHALLENGE_ENTRYPOINT=web
+      #- TRAEFIK_CERTIFICATESRESOLVERS_${NAME2}=true
+      #- TRAEFIK_CERTIFICATESRESOLVERS_${NAME2}_ACME_EMAIL=${ACME_EMAIL2}
+      #- TRAEFIK_CERTIFICATESRESOLVERS_${NAME2}_ACME_STORAGE=/etc/traefik/acme/acme_${NAME2}.json
+      #- TRAEFIK_CERTIFICATESRESOLVERS_${NAME2}_ACME_HTTPCHALLENGE_ENTRYPOINT=web
+      - TRAEFIK_LOG=true
+      - TRAEFIK_API=false
+      - TRAEFIK_API_DASHBOARD=true
+      - TRAEFIK_API_INSECURE=false
+      - TRAEFIK_PING=false
+      - TRAEFIK_PROVIDERS_DOCKER=true
+      - TRAEFIK_PROVIDERS_DOCKER_WATCH=true
+      - TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT=false
+      - TRAEFIK_PROVIDERS_FILE_DIRECTORY=/etc/traefik/files
+      - TRAEFIK_PROVIDERS_FILE_WATCH=true
+
+#  whoami:
+#    image: containous/whoami
+#    container_name: simple-service
+#    labels:
+#      - traefik.enable=true
+#      - traefik.http.routers.whoami.entrypoints=web
+#      - traefik.http.routers.whoami.rule=Host(`whoami.mydomain.com`)
+#      - traefik.http.routers.whoami.middlewares=http2https@file
+#      - traefik.http.routers.whoami-sec.entrypoints=websecure
+#      - traefik.http.routers.whoami-sec.rule=Host(`whoami.mydomain.com`)
+#      - traefik.http.routers.whoami-sec.tls.certresolver=mydomain-com
+#      - traefik.http.routers.whoami-sec.middlewares=sts@file
+
+networks:
+  default:
+    external:
+      name: webproxy
