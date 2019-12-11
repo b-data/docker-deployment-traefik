@@ -50,29 +50,29 @@ To install docker, follow the instructions for your platform:
     ```bash
     docker network create webproxy
     ```
-2.  Make a copy of [`.env.sample`](.env.sample) and rename it to `.env`.
-3.  Update the environment variables `NAME1` and `ACME_EMAIL1` in .env:
+2.  Make a copy of '[.env.sample](.env.sample)' and rename it to '.env'.
+3.  Update environment variables `NAME1` and `ACME_EMAIL1` in '.env':
     *  Replace `mydomain-com` with a suitable name to identify this certificate
        resolvers configuration.  
        → Dots (`.`) in the name are not allowed!
     *  Replace `postmaster@mydomain.com` with a valid email address of yours.
-4.  Make a copy of [`docker-compose.yml.sample`](docker-compose.yml.sample) and
-    rename it to `docker-compose.yml`.
+4.  Make a copy of '[docker-compose.yml.sample](docker-compose.yml.sample)' and
+    rename it to 'docker-compose.yml'.
 5.  Start the container in detached mode:  
     ```bash
     docker-compose up -d
     ```
 
 `docker-compose` commands must be run in the root directory of the project, i.e.
-where `docker-compose.yml` is located!
+where 'docker-compose.yml' is located!
 
 ### Test
 
-1.  Uncomment lines 42 to 53 in `docker-compose.yml` to enable service "whoami"
+1.  Uncomment lines 42 to 53 in 'docker-compose.yml' to enable service "whoami"
     and configure as follows:
     *  Replace `whoami.mydomain.com` with the intended domain from
     [Prerequisites](#prerequisites).
-    *  Replace `mydomain-com` with the value set for `NAME1` in `.env`.
+    *  Replace `mydomain-com` with the value set for `NAME1` in '.env'.
 2.  Start the container in detached mode:  
     ```bash
     docker-compose up -d
