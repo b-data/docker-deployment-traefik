@@ -51,7 +51,8 @@ To install docker, follow the instructions for your platform:
     docker network create webproxy
     ```
 2.  Make a copy of '[.env.sample](.env.sample)' and rename it to '.env'.
-3.  Update environment variables `NAME1` and `ACME_EMAIL1` in '.env':
+3.  Update environment variables `TF_CERTRESOLVER_NAME1` and `TF_ACME_EMAIL1` in
+    '.env':
     *  Replace `mydomain-com` with a suitable name to identify this certificate
        resolvers configuration.  
        → Dots (`.`) in the name are not allowed!
@@ -72,7 +73,8 @@ where 'docker-compose.yml' is located!
     and configure as follows:
     *  Replace `whoami.mydomain.com` with the intended domain from
     [Prerequisites](#prerequisites).
-    *  Replace `mydomain-com` with the value set for `NAME1` in '.env'.
+    *  Replace `mydomain-com` with the value set for `TF_CERTRESOLVER_NAME1` in
+    '.env'.
 2.  Start the container in detached mode:  
     ```bash
     docker-compose up -d
