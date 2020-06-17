@@ -1,7 +1,7 @@
 # Træfik
 
 [This project](https://gitlab.b-data.ch/docker/deployments/traefik) serves as
-a template to run [træfik](https://hub.docker.com/_/traefik) v2.0 in a docker
+a template to run [Træfik](https://hub.docker.com/_/traefik) v2.2 in a docker
 container using docker-compose.
 
 The goal is to set up a TLS termination proxy for all Docker containers
@@ -24,7 +24,7 @@ providing web services on a **single host**.
 **About træfik**
 
 *  Homepage: https://containo.us/traefik/
-*  Documentation: https://docs.traefik.io/v2.0/
+*  Documentation: https://docs.traefik.io/v2.2/
 
 ## Prerequisites
 
@@ -37,8 +37,8 @@ For the HTTP challenge you will need:
 
 To install docker, follow the instructions for your platform:
 
-*  [About Docker Engine - Community > Supported platforms](https://docs.docker.com/install/#supported-platforms)
-*  [Post-installation steps for Linux](https://docs.docker.com/install/linux/linux-postinstall/)
+*  [Install Docker Engine | Docker Documentation > Supported platforms](https://docs.docker.com/engine/install/#supported-platforms)
+*  [Post-installation steps for Linux](https://docs.docker.com/engine/install/linux-postinstall/)
 
 ### Docker Compose
 
@@ -79,7 +79,8 @@ where 'docker-compose.yml' is located!
     ```bash
     docker-compose up -d
     ```
-3.  Wait a bit and visit http://your_domain to confirm everything went fine.
+3.  Wait a bit and visit http://whoami.mydomain.com to confirm everything went
+fine.
 
 ## Debugging
 
