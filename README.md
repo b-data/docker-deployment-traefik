@@ -1,6 +1,6 @@
 # Træfik
 
-[This project](https://gitlab.b-data.ch/docker/deployments/traefik) serves as
+[This project](https://gitlab.com/b-data/docker/deployments/traefik) serves as
 a template to run [Træfik](https://hub.docker.com/_/traefik) v2.2 in a docker
 container using docker-compose.
 
