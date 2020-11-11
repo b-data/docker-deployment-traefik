@@ -5,3 +5,7 @@
     [http.middlewares.sts.headers]
       forceSTSHeader = true
       stsSeconds = 315360000
+    [http.middlewares.security.headers]
+      frameDeny = true
+      contentTypeNosniff = true
+      browserXssFilter = true

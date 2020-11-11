@@ -1,17 +1,18 @@
-version: "3"
+version: '3.8'
 
 services:
   traefik:
     image: traefik:${TF_VERSION}
-    container_name: traefik
     restart: always
     ports:
-      - "80:80"
-      - "443:443"
-      #- "8080:8080"
+      - '80:80'
+      - '443:443'
+      #- '8080:8080'
+    networks:
+      - webproxy
     volumes:
-      - ./config/acme:/etc/traefik/acme
-      - ./config/files:/etc/traefik/files:ro
+      - traefik-data:/etc/traefik/acme
+      - ${TF_HOME:-.}/config/files:/etc/traefik/files:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
       - TRAEFIK_GLOBAL_CHECKNEWVERSION=false
@@ -41,7 +42,8 @@ services:
 
 #  whoami:
 #    image: containous/whoami
-#    container_name: simple-service
+#    networks:
+#      - webproxy
 #    labels:
 #      - traefik.enable=true
 #      - traefik.http.routers.whoami.entrypoints=web
@@ -50,9 +52,11 @@ services:
 #      - traefik.http.routers.whoami-sec.entrypoints=websecure
 #      - traefik.http.routers.whoami-sec.rule=Host(`whoami.mydomain.com`)
 #      - traefik.http.routers.whoami-sec.tls.certresolver=mydomain-com
-#      - traefik.http.routers.whoami-sec.middlewares=sts@file
+#      - traefik.http.routers.whoami-sec.middlewares=sts@file,security@file
 
 networks:
-  default:
-    external:
-      name: webproxy
+  webproxy:
+    external: true
+
+volumes:
+  traefik-data:
