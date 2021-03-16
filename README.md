@@ -24,7 +24,7 @@ providing web services on a **single host**.
 **About træfik**
 
 *  Homepage: https://containo.us/traefik/
-*  Documentation: https://docs.traefik.io/v2.2/
+*  Documentation: https://docs.traefik.io/v2.4/
 
 ## Prerequisites
 

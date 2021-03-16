@@ -79,7 +79,9 @@ $RECYCLE.BIN/
 .env
 config/**/*.json
 config/**/*.toml
+config/certs/**
 docker-compose.yml
 
+!.keep
 !config/files/middlewares_basic.toml
 !config/files/tls.toml
