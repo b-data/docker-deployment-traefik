@@ -50,15 +50,16 @@ To install docker, follow the instructions for your platform:
     ```bash
     docker network create webproxy
     ```
-2.  Make a copy of '[.env.sample](.env.sample)' and rename it to '.env'.
+1.  Make a copy of all `sample.` files:  
+    ```bash
+    for file in sample.*; do cp "$file" "${file#sample.}"; done;
+    ```
 3.  Update environment variables `TF_CERTRESOLVER_NAME1` and `TF_ACME_EMAIL1` in
     '.env':
     *  Replace `mydomain-com` with a suitable name to identify this certificate
        resolvers configuration.  
        → Dots (`.`) in the name are not allowed!
     *  Replace `postmaster@mydomain.com` with a valid email address of yours.
-4.  Make a copy of '[docker-compose.yml.sample](docker-compose.yml.sample)' and
-    rename it to 'docker-compose.yml'.
 5.  Start the container in detached mode:  
     ```bash
     docker-compose up -d
