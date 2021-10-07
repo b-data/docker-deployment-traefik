@@ -1,7 +1,7 @@
 # Træfik
 
 [This project](https://gitlab.com/b-data/docker/deployments/traefik) serves as
-a template to run [Træfik](https://hub.docker.com/_/traefik) v2.4 in a docker
+a template to run [Træfik](https://hub.docker.com/_/traefik) v2.5 in a docker
 container using docker-compose.
 
 The goal is to set up a TLS termination proxy for all Docker containers
@@ -23,8 +23,8 @@ providing web services on a **single host**.
 
 **About træfik**
 
-*  Homepage: https://containo.us/traefik/
-*  Documentation: https://docs.traefik.io/v2.4/
+*  Homepage: https://traefik.io/traefik/
+*  Documentation: https://doc.traefik.io/traefik/
 
 ## Prerequisites
 
@@ -54,12 +54,12 @@ To install docker, follow the instructions for your platform:
     ```bash
     for file in sample.*; do cp "$file" "${file#sample.}"; done;
     ```
-3.  Update environment variables `TF_CERTRESOLVER_NAME1` and `TF_ACME_EMAIL1` in
+3.  Update environment variables `TF_ACME_EMAIL` and `TF_CERTRESOLVER_NAME1` in
     '.env':
+    *  Replace `postmaster@mydomain.com` with a valid email address of yours.
     *  Replace `mydomain-com` with a suitable name to identify this certificate
        resolvers configuration.  
        → Dots (`.`) in the name are not allowed!
-    *  Replace `postmaster@mydomain.com` with a valid email address of yours.
 5.  Start the container in detached mode:  
     ```bash
     docker-compose up -d
@@ -70,7 +70,7 @@ where 'docker-compose.yml' is located!
 
 ### Test
 
-1.  Uncomment lines 42 to 53 in 'docker-compose.yml' to enable service "whoami"
+1.  Uncomment lines 43 to 55 in 'docker-compose.yml' to enable service "whoami"
     and configure as follows:
     *  Replace `whoami.mydomain.com` with the intended domain from
     [Prerequisites](#prerequisites).
@@ -89,5 +89,5 @@ Use [docker logs](https://docs.docker.com/engine/reference/commandline/logs/)
 to see the output of the container:
 
 ```bash
-docker logs traefik
+docker logs webproxy_traefik_1
 ```
