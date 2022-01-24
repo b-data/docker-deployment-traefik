@@ -14,6 +14,9 @@ providing web services on a **single host**.
 *  Automatic creation/renewal of Let's Encrypt certificates (HTTP challenge).
 *  Provision of the following basic Middlewares:
     *  RedirectScheme: Redirect from HTTP to HTTPS
+    *  RateLimit: Limit to a _fair_ amount of requests
+        *  average: 100 requests per second
+        *  burst: 50 requests (per second)
     *  Headers: HTTP Strict Transport Security with long duration
 *  Provision of three configurations (modern, intermediate [default], old) for
    TLS.  
