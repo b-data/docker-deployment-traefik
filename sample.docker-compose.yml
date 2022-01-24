@@ -52,7 +52,7 @@ services:
 #      - traefik.http.routers.whoami-sec.entrypoints=websecure
 #      - traefik.http.routers.whoami-sec.rule=Host(`whoami.mydomain.com`)
 #      - traefik.http.routers.whoami-sec.tls.certresolver=mydomain-com
-#      - traefik.http.routers.whoami-sec.middlewares=sts@file,security@file
+#      - traefik.http.routers.whoami-sec.middlewares=ratelimit@file,sts@file,security@file
 
 networks:
   webproxy:

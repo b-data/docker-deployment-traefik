@@ -2,6 +2,12 @@
   [http.middlewares]
     [http.middlewares.http2https.redirectScheme]
       scheme = "https"
+    [http.middlewares.ratelimit.rateLimit]
+      average = 100
+      burst = 50
+      [http.middlewares.ratelimit.rateLimit.sourceCriterion]
+        [http.middlewares.ratelimit.rateLimit.sourceCriterion.ipStrategy]
+          depth = 1
     [http.middlewares.sts.headers]
       forceSTSHeader = true
       stsSeconds = 31536000
