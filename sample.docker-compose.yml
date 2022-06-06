@@ -41,7 +41,7 @@ services:
       - TRAEFIK_PROVIDERS_FILE_WATCH=true
 
 #  whoami:
-#    image: containous/whoami
+#    image: traefik/whoami
 #    networks:
 #      - webproxy
 #    labels:
