@@ -4,7 +4,7 @@
 
 [This project](https://gitlab.com/b-data/docker/deployments/traefik) serves as
 a template to run [Træfik](https://hub.docker.com/_/traefik) v2.8 in a docker
-container using docker-compose.
+container using docker compose.
 
 The goal is to set up a TLS termination proxy for all Docker containers
 providing web services on a **single host**.
@@ -40,14 +40,11 @@ For the HTTP challenge you will need:
 
 ### Docker
 
-To install docker, follow the instructions for your platform:
+To install docker and docker compose, follow the instructions for your platform:
 
 *  [Install Docker Engine | Docker Documentation > Supported platforms](https://docs.docker.com/engine/install/#supported-platforms)
+   *  Includes Docker Compose V2
 *  [Post-installation steps for Linux](https://docs.docker.com/engine/install/linux-postinstall/)
-
-### Docker Compose
-
-*  [Install Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Setup
 
@@ -67,10 +64,10 @@ To install docker, follow the instructions for your platform:
        → Dots (`.`) in the name are not allowed!
 5.  Start the container in detached mode:  
     ```bash
-    docker-compose up -d
+    docker compose up -d
     ```
 
-`docker-compose` commands must be run in the root directory of the project, i.e.
+`docker compose` commands must be run in the root directory of the project, i.e.
 where 'docker-compose.yml' is located!
 
 ### Test
@@ -83,7 +80,7 @@ where 'docker-compose.yml' is located!
     '.env'.
 2.  Start the container in detached mode:  
     ```bash
-    docker-compose up -d
+    docker compose up -d
     ```
 3.  Wait a bit and visit http://whoami.mydomain.com to confirm everything went
 fine.
@@ -94,5 +91,5 @@ Use [docker logs](https://docs.docker.com/engine/reference/commandline/logs/)
 to see the output of the container:
 
 ```bash
-docker logs webproxy_traefik_1
+docker logs webproxy-traefik-1
 ```
