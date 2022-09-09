@@ -94,6 +94,14 @@ to see the output of the container:
 docker logs webproxy-traefik-1
 ```
 
+## Contributing
+
+PRs accepted.
+
+This project follows the
+[Contributor Covenant](https://www.contributor-covenant.org)
+[Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## License
 
 [MIT](LICENSE) © 2019 b-data GmbH
