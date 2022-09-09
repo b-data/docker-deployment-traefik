@@ -93,3 +93,7 @@ to see the output of the container:
 ```bash
 docker logs webproxy-traefik-1
 ```
+
+## License
+
+[MIT](LICENSE) © 2019 b-data GmbH
