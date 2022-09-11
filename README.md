@@ -1,4 +1,4 @@
-<a href="https://liberapay.com/benz0li/donate"><img src="https://liberapay.com/assets/widgets/donate.svg" alt="Donate using Liberapay" height="20"></a> <a href="https://benz0li.b-data.io/donate?project=2"><img src="https://benz0li.b-data.io/donate/static/donate-with-fosspay.png" alt="Donate with fosspay"></a>
+[![minimal-readme compliant](https://img.shields.io/badge/readme%20style-minimal-brightgreen.svg)](https://github.com/RichardLitt/standard-readme/blob/master/example-readmes/minimal-readme.md) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) <a href="https://liberapay.com/benz0li/donate"><img src="https://liberapay.com/assets/widgets/donate.svg" alt="Donate using Liberapay" height="20"></a> <a href="https://benz0li.b-data.io/donate?project=2"><img src="https://benz0li.b-data.io/donate/static/donate-with-fosspay.png" alt="Donate with fosspay"></a>
 
 # Træfik
 
@@ -31,14 +31,22 @@ providing web services on a **single host**.
 *  Homepage: https://traefik.io/traefik/
 *  Documentation: https://doc.traefik.io/traefik/
 
+## Table of Contents
+
+*  [Prerequisites](#prerequisites)
+*  [Install](#install)
+*  [Usage](#usage)
+*  [Contributing](#contributing)
+*  [License](#license)
+
 ## Prerequisites
 
-For the HTTP challenge you will need:
+For the HTTP challenge you require:
 
 *  A publicly accessible host allowing connections on port 80 & 443.
 *  A DNS record for the domain you want to expose pointing to this host.
 
-### Docker
+## Install
 
 To install docker and docker compose, follow the instructions for your platform:
 
@@ -46,7 +54,7 @@ To install docker and docker compose, follow the instructions for your platform:
    *  Includes Docker Compose V2
 *  [Post-installation steps for Linux](https://docs.docker.com/engine/install/linux-postinstall/)
 
-## Setup
+## Usage
 
 1.  Create an external docker network named "webproxy":  
     ```bash
@@ -85,7 +93,7 @@ where 'docker-compose.yml' is located!
 3.  Wait a bit and visit http://whoami.mydomain.com to confirm everything went
 fine.
 
-## Debugging
+### Debugging
 
 Use [docker logs](https://docs.docker.com/engine/reference/commandline/logs/)
 to see the output of the container:
