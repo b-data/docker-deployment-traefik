@@ -60,17 +60,21 @@ To install docker and docker compose, follow the instructions for your platform:
     ```bash
     docker network create webproxy
     ```
+1.  Change file mode of `config/acme`:
+    ```bash
+    chmod go+w config/acme
+    ```
 1.  Make a copy of all `sample.` files:  
     ```bash
     for file in sample.*; do cp "$file" "${file#sample.}"; done;
     ```
-3.  Update environment variables `TF_ACME_EMAIL` and `TF_CERTRESOLVER_NAME1` in
+1.  Update environment variables `TF_ACME_EMAIL` and `TF_CERTRESOLVER_NAME1` in
     '.env':
     *  Replace `postmaster@mydomain.com` with a valid email address of yours.
     *  Replace `mydomain-com` with a suitable name to identify this certificate
        resolvers configuration.  
        → Dots (`.`) in the name are not allowed!
-5.  Start the container in detached mode:  
+1.  Start the container in detached mode:  
     ```bash
     docker compose up -d
     ```
