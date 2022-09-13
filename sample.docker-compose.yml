@@ -11,7 +11,7 @@ services:
     networks:
       - webproxy
     volumes:
-      - traefik-data:/etc/traefik/acme
+      - ${TF_HOME:-.}/config/acme:/etc/traefik/acme
       - ${TF_HOME:-.}/config/files:/etc/traefik/files:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
@@ -57,6 +57,3 @@ services:
 networks:
   webproxy:
     external: true
-
-volumes:
-  traefik-data:
