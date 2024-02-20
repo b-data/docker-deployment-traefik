@@ -1,4 +1,4 @@
-sources: 
+sources:
   - file_name: traefik.sample.toml
     url: https://raw.githubusercontent.com/traefik/traefik/master/traefik.sample.toml
-    date: 2021-10-07
+    date: 2023-02-20
