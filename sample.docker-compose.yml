@@ -9,8 +9,8 @@ services:
     networks:
       - webproxy
     volumes:
-      - ${TF_HOME:-.}/config/acme:/etc/traefik/acme
-      - ${TF_HOME:-.}/config/files:/etc/traefik/files:ro
+      - ${TF_HOME:-$PWD}/config/acme:/etc/traefik/acme
+      - ${TF_HOME:-$PWD}/config/files:/etc/traefik/files:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
       - TRAEFIK_GLOBAL_CHECKNEWVERSION=false
