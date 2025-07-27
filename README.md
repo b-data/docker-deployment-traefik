@@ -5,7 +5,7 @@
 <!-- markdownlint-enable line-length -->
 
 [This project](https://gitlab.com/b-data/docker/deployments/traefik) serves as
-a template to run [Træfik](https://hub.docker.com/_/traefik) v3.3 in a docker
+a template to run [Træfik](https://hub.docker.com/_/traefik) v3.5 in a docker
 container using docker compose.
 
 The goal is to set up a TLS termination proxy for all Docker containers
