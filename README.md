@@ -5,7 +5,7 @@
 <!-- markdownlint-enable line-length -->
 
 [This project](https://gitlab.com/b-data/docker/deployments/traefik) serves as
-a template to run [Træfik](https://hub.docker.com/_/traefik) v3.5 in a docker
+a template to run [Træfik](https://hub.docker.com/_/traefik) v3.6 in a docker
 container using docker compose.  
 ℹ️ For Træfik as an ingress controller on a cloud/on-premise k8s environment,
 see the [Traefik Kubernetes Ingress provider](https://doc.traefik.io/traefik/reference/install-configuration/providers/kubernetes/kubernetes-ingress/).
